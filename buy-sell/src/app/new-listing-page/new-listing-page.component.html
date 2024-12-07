@@ -1,18 +1,8 @@
 <div calss = 'content-box'>
     <h2>Create New Listing</h2>
-    <form (ngSubmit) = "onSubmit()">
-        <div>
-            <label for = 'name'>Name:</label>
-            <input type = 'text' id = 'name' name = 'name' [(ngModel)] = 'name'>
-        </div>
-        <div class>
-            <label for = 'description'>Item Description:</label>
-            <input type="text" id = 'description' name = 'description' [(ngModel)] = 'description'>
-        </div>
-        <div class = 'input-container'>
-            <label for = 'price'>Price:</label>
-            <input type = 'number' id = 'price' name = 'price' [(ngModel)] = 'price'>
-        </div>
-        <button type = 'submit'>Create Listing</button>
-    </form>
+    <app-listing-data-form 
+    buttonText="Add New Listing"
+    (formSubmitted)="onSubmit()"
+    >
+</app-listing-data-form>
 </div>
