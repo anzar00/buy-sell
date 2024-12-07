@@ -1,4 +1,5 @@
 import Hapi from '@hapi/hapi';
+import routes from './routes';
 
 const start = async () => {
     const server = Hapi.server({
@@ -6,22 +7,8 @@ const start = async () => {
         host: 'localhost',
     });
     
-    server.route({
-        method: 'GET',
-        path: '/hello',
-        handler: (request, h) => {
-            return 'Server says Hello!';
-        }
-    });
-
-    server.route({
-        method: 'POST',
-        path: '/hello',
-        handler: (request, h) => {
-            const payload = request.payload;
-            const name = payload.name;
-            return `Hello ${name}!`;
-        }
+    routes.forEach((route) => {
+        server.route(route);
     });
 
     await server.start();
