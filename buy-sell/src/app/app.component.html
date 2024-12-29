@@ -2,7 +2,10 @@
     <div id="max-width-column">
         <app-nav-bar></app-nav-bar>
         <div id="content-wrap">
-            <router-outlet />
+            <router-outlet *ngIf="user; else loginPage"></router-outlet>
+            <ng-template #loginPage>
+                <app-login></app-login>
+            </ng-template>
         </div>
     </div>
 </div>

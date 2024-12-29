@@ -6,6 +6,7 @@ import { EditListingPageComponent } from './edit-listing-page/edit-listing-page.
 import { MyListingsPageComponent } from './my-listings-page/my-listings-page.component';
 import { NewListingPageComponent } from './new-listing-page/new-listing-page.component';
 import { provideHttpClient } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
 
 export const routes: Routes = [
   { path: 'listings', component: ListingsPageComponent },
@@ -14,6 +15,7 @@ export const routes: Routes = [
   { path: 'edit-listing/:id', component: EditListingPageComponent },
   { path: 'my-listings', component: MyListingsPageComponent },
   { path: 'new-listing', component: NewListingPageComponent },
+  { path: 'login', component: LoginComponent },
   { path: '', redirectTo: '/listings', pathMatch: 'full' }
 ];
 
