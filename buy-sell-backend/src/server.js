@@ -6,6 +6,13 @@ const start = async () => {
     const server = Hapi.server({
         port: 8000,
         host: 'localhost',
+        routes: {
+            cors: {
+                origin: ['*'], 
+                headers: ['Accept', 'Content-Type'],
+                additionalHeaders: ['X-Requested-With']
+            }
+        }
     });
     
     routes.forEach((route) => {

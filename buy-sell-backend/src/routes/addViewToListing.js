@@ -1,5 +1,5 @@
 import { db } from "../database";
-
+import Boom from '@hapi/boom';
 
 export const addViewToListingRoute = {
     method: 'POST',

@@ -19,7 +19,7 @@ export class EditListingPageComponent implements OnInit  {
 
   ngOnInit(): void {
       const id = this.route.snapshot.paramMap.get('id');
-      this.listing = fakeMyListings.find(listing => listing.id === id) || { id: '', name: '', description: '', price: 0 };
+      this.listing = fakeMyListings.find(listing => listing.id === id) || { id: '', name: '', description: '', price: 0, views: 0 };
   }
 
   onFormSubmitted(): void {

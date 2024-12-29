@@ -4,14 +4,17 @@ import { ListingDetailPageComponent } from './listing-detail-page/listing-detail
 import { ContactPageComponent } from './contact-page/contact-page.component';
 import { EditListingPageComponent } from './edit-listing-page/edit-listing-page.component';
 import { MyListingsPageComponent } from './my-listings-page/my-listings-page.component';
-import { NewListingPageComponent } from './new-listing-page/new-listing-page.component';
+import { provideHttpClient } from '@angular/common/http';
 
 export const routes: Routes = [
-    { path : '', redirectTo: '/listings', pathMatch : 'full'},
-    { path : 'listings', component: ListingsPageComponent, pathMatch : 'full'},
-    { path : 'listings/:id', component: ListingDetailPageComponent },
-    { path : 'contact/:id', component: ContactPageComponent },
-    { path : 'edit-listing/:id', component: EditListingPageComponent },
-    { path : 'my-listings', component: MyListingsPageComponent },
-    { path : 'new-listing', component: NewListingPageComponent },
+  { path: 'listings', component: ListingsPageComponent },
+  { path: 'listings/:id', component: ListingDetailPageComponent },
+  { path: 'contact', component: ContactPageComponent },
+  { path: 'edit-listing/:id', component: EditListingPageComponent },
+  { path: 'my-listings', component: MyListingsPageComponent },
+  { path: '', redirectTo: '/listings', pathMatch: 'full' }
+];
+
+export const appProviders = [
+  provideHttpClient()
 ];
