@@ -1,1 +1,3 @@
 buy-sell-backend/node_modules
+buy-sell-backend/cred.json
+buy-sell/src/firebase-config.ts
